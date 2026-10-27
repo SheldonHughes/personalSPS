@@ -15,6 +15,7 @@ body {
 
 p {
   text-align: justify;
+  text-wrap: balance;
 }
 
 .navbar {
@@ -59,4 +60,122 @@ p {
   p {
     text-indent: 2em;
   }
+}
+
+.home {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  /* column-gap: 2rem; */
+  padding: 2rem;
+}
+
+.welcome-text {
+  font-size: 1rem;
+  margin: 0.5rem;
+  text-align: center;
+}
+
+.welcome-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  text-align: center;
+  text-wrap: balance;
+  margin: 1rem;
+}
+
+.time-card {
+  width: 300px;
+  height: 300px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  --_ow: clamp(5rem, 80%, 40rem);
+  --_w: 88cqi;
+  --_r: calc((var(--_w) - var(--_sz)) / 2);
+  --_sz: 12cqi;
+  background: #222;
+  block-size: var(--_ow);
+  border-radius: 12%;
+  container-type: inline-size;
+  display: grid;
+  inline-size: var(--_ow);
+  margin-inline: auto;
+  place-content: center;
+}
+
+.clock time:nth-child(1) {
+  --_d: 270deg;
+}
+.clock time:nth-child(2) {
+  --_d: 300deg;
+}
+.clock time:nth-child(3) {
+  --_d: 330deg;
+}
+.clock time:nth-child(4) {
+  --_d: 0deg;
+}
+.clock time:nth-child(5) {
+  --_d: 30deg;
+}
+.clock time:nth-child(6) {
+  --_d: 60deg;
+}
+.clock time:nth-child(7) {
+  --_d: 90deg;
+}
+.clock time:nth-child(8) {
+  --_d: 120deg;
+}
+.clock time:nth-child(9) {
+  --_d: 150deg;
+}
+.clock time:nth-child(10) {
+  --_d: 180deg;
+}
+.clock time:nth-child(11) {
+  --_d: 210deg;
+}
+.clock time:nth-child(12) {
+  --_d: 240deg;
+}
+
+.clock-face {
+  aspect-ratio: 1;
+  background: var(--_bgc, #fff);
+  border-radius: 50%;
+  block-size: var(--_w);
+  font-size: 6cqi;
+  font-weight: 700;
+  list-style-type: none;
+  inline-size: var(--_w);
+  padding: unset;
+  position: relative;
+}
+
+.clock-face time {
+  --_x: calc(var(--_r) + (var(--_r) * cos(var(--_d))));
+  --_y: calc(var(--_r) + (var(--_r) * sin(var(--_d))));
+  --_sz: 12cqi;
+  display: grid;
+  height: var(--_sz);
+  left: var(--_x);
+  place-content: center;
+  position: absolute;
+  top: var(--_y);
+  width: var(--_sz);
 }
